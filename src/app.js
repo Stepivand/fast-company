@@ -11,16 +11,16 @@ const App = () => {
   }
 
   const handleToggleBookMark = (id) => {
-    console.log(id)
-    const newUsers = newUsers.map((item) =>
-      item._id === id
-        ? {
-            ...item,
-            bookmark: !item.bookmark,
-          }
-        : item
+    setUsers((prev) =>
+      prev.map((user) =>
+        user._id === id
+          ? {
+              ...user,
+              bookmark: !user.bookmark,
+            }
+          : user
+      )
     )
-    setUsers(newUsers)
   }
 
   return (

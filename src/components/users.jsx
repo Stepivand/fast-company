@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import User from './user'
 
-const Users = ({ users, onDelete, onToggleBookMark }) => {
+const Users = ({ users, ...rest }) => {
   return (
     <>
       {users.length > 0 && (
@@ -20,12 +20,7 @@ const Users = ({ users, onDelete, onToggleBookMark }) => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <User
-                key={user._id}
-                {...user}
-                onDelete={onDelete}
-                onToggleBookMark1={onToggleBookMark}
-              />
+              <User key={user._id} {...user} {...rest} />
             ))}
           </tbody>
         </table>
