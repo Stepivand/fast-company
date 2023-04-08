@@ -13,7 +13,10 @@ module.exports = {
   rules: {
     indent: ['error', 2, { offsetTernaryExpressions: true }], // отступы должны быть кратны 4
     semi: ['error', 'never'], // наличие ;
-    'space-before-function-paren': ['error', 'never'], // отмена пробела перед скобками при обазначением функции
+    'space-before-function-paren': [
+      'error',
+      { anonymous: 'always', named: 'never' }
+    ], // отмена пробела перед скобками при обазначением функции
     quotes: ['error', 'single', { allowTemplateLiterals: true }] // добавление двойных ковычек
   }
 }
